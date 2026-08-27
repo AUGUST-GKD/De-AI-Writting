@@ -1,0 +1,4 @@
+interface:
+  display_name: "De-AI Writing"
+  short_description: "Diagnose and rewrite formulaic AI-flavored prose"
+  default_prompt: "Use $de-ai to rewrite this passage so it sounds natural while preserving its meaning and facts."

@@ -15,38 +15,50 @@ The skill treats AI flavor as a contextual style diagnosis. It does not claim to
 
 ## Install
 
-### With the Codex skill installer
+### ChatGPT Desktop plugin
 
-Ask Codex:
+This repository includes a **skills-only ChatGPT plugin**. No MCP server, external API, or external account is required.
+
+The plugin uses OpenAI's shared plugin package format, so its manifest lives at `.codex-plugin/plugin.json`; despite the folder name, the plugin is installable and usable in **ChatGPT Desktop**.
+
+For a repo-scoped install, clone the repository, restart ChatGPT Desktop, open **Plugins**, choose the local **De-AI Writing** marketplace, and install **De-AI Writing**.
+
+For a personal install that does not depend on keeping this repo open, copy `plugins/de-ai-writing` into `~/.codex/plugins/de-ai-writing` and add it to `~/.agents/plugins/marketplace.json`.
+
+Full ChatGPT Desktop instructions, including the personal marketplace JSON, are in [CHATGPT_PLUGIN.md](CHATGPT_PLUGIN.md).
+
+### Codex skill installation
+
+The original Codex skill remains available separately.
+
+With the Codex skill installer:
 
 ```text
 $skill-installer install the de-ai skill from https://github.com/AUGUST-GKD/De-AI-Writting
 ```
 
-### Manual installation
-
-Codex loads personal skills from `$HOME/.agents/skills`:
+Or manually:
 
 ```bash
 mkdir -p "$HOME/.agents/skills"
 git clone https://github.com/AUGUST-GKD/De-AI-Writting.git "$HOME/.agents/skills/de-ai"
 ```
 
-Codex detects skill changes automatically. Restart Codex if the skill does not appear. See the official [Build skills documentation](https://developers.openai.com/codex/skills) for skill locations and invocation behavior.
-
 ## Use
 
-Invoke the skill explicitly with `$de-ai`, or let Codex select it when the request matches the description in `SKILL.md`.
+In ChatGPT Desktop, enable **De-AI Writing** or mention it with `@De-AI Writing` when plugin mentions are available.
 
 Examples:
 
 ```text
-$de-ai audit this abstract for AI-flavored writing.
+Use De-AI Writing to audit this abstract for AI-flavored writing.
 
-$de-ai rewrite this reviewer response while preserving every factual claim and citation.
+Use De-AI Writing to rewrite this reviewer response while preserving every factual claim and citation.
 
-$de-ai 检查并修改这段中文，保留原意和术语，降低 AI 味。
+使用 De-AI Writing 检查并修改这段中文，保留原意和术语，降低 AI 味。
 ```
+
+In Codex, the original skill can still be invoked with `$de-ai`.
 
 ## Operating modes
 
@@ -72,7 +84,17 @@ de-ai/
     general-zh.md
     reading-notes.md
     tech-doc.md
+  .agents/plugins/
+    marketplace.json
+  plugins/de-ai-writing/
+    .codex-plugin/
+      plugin.json
+    skills/de-ai/
+      SKILL.md
+      references/
 ```
+
+The root-level skill remains available for the original Codex installation flow. The plugin package mirrors that skill under `plugins/de-ai-writing/skills/de-ai/` for ChatGPT plugin installation.
 
 ## License
 

@@ -1,0 +1,20 @@
+{
+  "name": "de-ai-writing",
+  "interface": {
+    "displayName": "De-AI Writing"
+  },
+  "plugins": [
+    {
+      "name": "de-ai-writing",
+      "source": {
+        "source": "local",
+        "path": "./plugins/de-ai-writing"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

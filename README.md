@@ -15,6 +15,20 @@ The skill treats AI flavor as a contextual style diagnosis. It does not claim to
 
 ## Install
 
+### As a ChatGPT plugin
+
+This repository now includes a skills-only plugin package and a local marketplace entry. No MCP server or external account is required.
+
+Add the repository as a plugin marketplace:
+
+```bash
+codex plugin marketplace add AUGUST-GKD/De-AI-Writting
+```
+
+Then restart the ChatGPT desktop app, open **Plugins**, select the **De-AI Writing** marketplace source, and install **De-AI Writing**.
+
+For the plugin layout, local-checkout installation, testing, and public-publishing notes, see [CHATGPT_PLUGIN.md](CHATGPT_PLUGIN.md).
+
 ### With the Codex skill installer
 
 Ask Codex:
@@ -23,7 +37,7 @@ Ask Codex:
 $skill-installer install the de-ai skill from https://github.com/AUGUST-GKD/De-AI-Writting
 ```
 
-### Manual installation
+### Manual skill installation
 
 Codex loads personal skills from `$HOME/.agents/skills`:
 
@@ -36,7 +50,7 @@ Codex detects skill changes automatically. Restart Codex if the skill does not a
 
 ## Use
 
-Invoke the skill explicitly with `$de-ai`, or let Codex select it when the request matches the description in `SKILL.md`.
+Invoke the skill explicitly with `$de-ai`, enable the **De-AI Writing** plugin in ChatGPT, or let Codex select the skill when the request matches the description in `SKILL.md`.
 
 Examples:
 
@@ -72,7 +86,17 @@ de-ai/
     general-zh.md
     reading-notes.md
     tech-doc.md
+  .agents/plugins/
+    marketplace.json
+  plugins/de-ai-writing/
+    .codex-plugin/
+      plugin.json
+    skills/de-ai/
+      SKILL.md
+      references/
 ```
+
+The root-level skill remains available for the original Codex installation flow. The plugin package mirrors that skill under `plugins/de-ai-writing/skills/de-ai/` for ChatGPT/Codex plugin installation.
 
 ## License
 

@@ -1,0 +1,33 @@
+{
+  "name": "de-ai-writing",
+  "version": "1.0.0",
+  "description": "Diagnose and reduce formulaic AI-flavored prose while preserving meaning, facts, terminology, citations, formatting, and voice.",
+  "author": {
+    "name": "AUGUST-GKD",
+    "url": "https://github.com/AUGUST-GKD"
+  },
+  "homepage": "https://github.com/AUGUST-GKD/De-AI-Writting",
+  "repository": "https://github.com/AUGUST-GKD/De-AI-Writting",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "editing",
+    "academic-writing",
+    "chinese",
+    "english",
+    "de-ai"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "De-AI Writing",
+    "shortDescription": "Diagnose and rewrite formulaic AI-flavored prose",
+    "longDescription": "Audit or rewrite Chinese and English prose to reduce formulaic AI flavor while preserving the author's meaning, factual claims, terminology, citations, numbers, notation, formatting, and intended voice.",
+    "developerName": "AUGUST-GKD",
+    "category": "Productivity",
+    "defaultPrompt": [
+      "Audit this passage for AI-flavored writing and suggest only material fixes.",
+      "Rewrite this passage to sound natural while preserving meaning, facts, terminology, citations, numbers, and formatting.",
+      "检查并修改这段中文，保留原意、事实和术语，降低 AI 味。"
+    ]
+  }
+}
